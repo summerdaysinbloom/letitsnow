@@ -26,72 +26,58 @@
     <div id='letitsnow'>Let it snow</div>
   </div> -->
   <div class='pure-g-r'>
-      <div class='pure-u-1-2'>
-        <form class='pure-form pure-form-stacked'>
-          <fieldset>
-            <label for="nationality">Where are you from?</label>
-            <select class="pure-input-1" id="state">
+    <div id='accordion' class='pure-g'>
+    <form class="pure-form pure-u-1">
+      <ul>
+        <li>
+          <input id="rad1" type="radio" name="radio">
+          <label for="rad1">Where are you? <span>{{country}}</span></label>
+          <div class="accslide">
+            <select ng-model='country' class="pure-input-1">
+              <option value="">Country</option>
               <option>Malaysia</option>
               <option>Singapore</option>
               <option>Hongkong</option>
             </select> 
-      
-            <label for="muslim" class="pure-checkbox">
-              <input id="muslim" type="checkbox" value="">
-              Are you muslim?
-            </label>
-      
-            <label for="birthday">When were you born?</label>
-            <input class="pure-input-1" id="birthday" type="datetime-local" placeholder="DD-MM-YYYY">
+          </div>
+        </li>
+        <li ng-hide="!(country == 'Malaysia')">
+          <input id="rad2" type="radio" name="radio">
+          <label for="rad2">I am a muslim.</label>
+          <div class="accslide">
+            <select ng-model='muslim' class="pure-input-1">
+              <option value=""></option>
+              <option>Yes</option>
+              <option>No</option>
+            </select> 
         
+          </div>
+        </li>
+        <li>
+          <input id="rad3" type="radio" name="radio">
+          <label for="rad3">When were you born ? <span>{{birthday}}</span></label>
+          <div class="accslide">
+            <input ng-model="birthday" type="datetime" placeholder="DD-MM-YYYY" />
+            <select ng-model='country' class="pure-input-1">
+              <option value="">Country</option>
+              <option>Malaysia</option>
+              <option>Singapore</option>
+              <option>Hongkong</option>
+            </select> 
+          </div>
+        </li>
+        <li>
+          <input id="rad4" type="radio" name="radio">
+          <label for="rad4">Cookie</label>
+          <div class="accslide">
             <label for="remember" class="pure-checkbox">
-                <input id="remember" type="checkbox">Save these choices to make your next visit smoother.
+              <input id="remember" checked='true' type="checkbox">Save these choices to make your next visit smoother.
             </label>
-        
-            <button type="submit" class="pure-button pure-button-primary">Go</button>
-          </fieldset>
-        </form>
-      </div>
-      <div class='pure-u-1-2'>
-        <div id='accordion' class='pure-g'>
-          <form class="pure-form pure-u-1">
-            <ul>
-              <li>
-                <input id="rad1" type="radio" name="radio">
-                <label for="rad1">Where are you? <span>{{country}}</span> </label>
-                <div class="accslide">
-                  <select ng-model='country' class="pure-input-1">
-                    <option value="">Country</option>
-                    <option>Malaysia</option>
-                    <option>Singapore</option>
-                    <option>Hongkong</option>
-                  </select> 
-                </div>
-              </li>
-              <li ng-hide="!(country == 'Malaysia')">
-                <input id="rad2" type="radio" name="radio">
-                <label for="rad2">I am a muslim.</label>
-                <div class="accslide">
-                  <select ng-model='muslim' class="pure-input-1">
-                    <option value=""></option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </select> 
-              
-                </div>
-              </li>
-              <li>
-                <input id="rad3" type="radio" name="radio">
-                <label for="rad3">When were you born ?</label>
-                <div class="accslide">
-                  <fieldset>
-                    <input class="pure-input-1" id="birthday" type="datetime" placeholder="DD-MM-YYYY" />
-                  </fieldset>
-              </li>
-            </ul>  
-          </form>
-        </div>
-      </div>
+          </div>
+        </li>
+      </ul>  
+    </form>
+  </div>
     </div>
 </body>
 </html>
