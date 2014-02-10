@@ -114,6 +114,7 @@ body {
     background: #232323;
     color: #fff;
     cursor: pointer;
+    -webkit-tap-highlight-color: #fdd;
   }
 
 #accordion .accslide {
