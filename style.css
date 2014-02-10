@@ -111,10 +111,9 @@ body {
   }
 
 #accordion label:hover {
-    background: #232323;
     color: #fff;
     cursor: pointer;
-    -webkit-tap-highlight-color: #fdd;
+    -webkit-tap-highlight-color: #232323;
   }
 
 #accordion .accslide {

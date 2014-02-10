@@ -28,57 +28,87 @@
   </div> -->
   <div class='pure-g-r'>
     <div id='accordion' class='pure-g'>
-    <form class="pure-form pure-u-1">
-      <ul>
-        <li>
-          <input id="rad1" type="radio" name="radio">
-          <label for="rad1">Where are you? <span>{{country}}</span></label>
-          <div class="accslide">
-            <select ng-model='country' >
-              <option value="">Country</option>
-              <option>Malaysia</option>
-              <option>Singapore</option>
-              <option>Hongkong</option>
-            </select> 
-          </div>
-        </li>
-        <li ng-hide="!(country == 'Malaysia')">
-          <input id="rad2" type="radio" name="radio">
-          <label for="rad2">I am a muslim.</label>
-          <div class="accslide">
-            <select ng-model='muslim' class="pure-input-1">
-              <option value=""></option>
-              <option>Yes</option>
-              <option>No</option>
-            </select> 
-        
-          </div>
-        </li>
-        <li>
-          <input id="rad3" type="radio" name="radio">
-          <label for="rad3">When were you born ? <span>{{birthday}}</span></label>
-          <div class="accslide">
-            <input ng-model="birthday" type="datetime" placeholder="DD-MM-YYYY" />
-            <select ng-model='country' class="pure-input-1">
-              <option value="">Country</option>
-              <option>Malaysia</option>
-              <option>Singapore</option>
-              <option>Hongkong</option>
-            </select> 
-          </div>
-        </li>
-        <li>
-          <input id="rad4" type="radio" name="radio">
-          <label for="rad4">Cookie</label>
-          <div class="accslide">
-            <label for="remember" class="pure-checkbox">
-              <input id="remember" checked='true' type="checkbox">Save these choices to make your next visit smoother.
-            </label>
-          </div>
-        </li>
-      </ul>  
-    </form>
-  </div>
+      <form class="pure-form pure-u-1">
+        <ul>
+          <li>
+            <input id="rad1" type="radio" name="radio">
+            <label for="rad1">Where are you? <span>{{country}}</span></label>
+            <div class="accslide">
+              <select ng-model='country' >
+                <option value="">Country</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+                <option>Hongkong</option>
+              </select> 
+            </div>
+          </li>
+          <li ng-hide="!(country == 'Malaysia')">
+            <input id="rad2" type="radio" name="radio">
+            <label for="rad2">I am a muslim.</label>
+            <div class="accslide">
+              <select ng-model='muslim' class="pure-input-1">
+                <option value=""></option>
+                <option>Yes</option>
+                <option>No</option>
+              </select> 
+          
+            </div>
+          </li>
+          <li>
+            <input id="rad3" type="radio" name="radio">
+            <label for="rad3">When were you born ? <span>{{birthday}}</span></label>
+            <div class="accslide">
+              <input ng-model="birthday" type="datetime" placeholder="DD-MM-YYYY" />
+              <select ng-model='country' class="pure-input-1">
+                <option value="">Country</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+                <option>Hongkong</option>
+              </select> 
+            </div>
+          </li>
+          <li>
+            <input id="rad4" type="radio" name="radio">
+            <label for="rad4">Cookie</label>
+            <div class="accslide">
+              <label for="remember" class="pure-checkbox">
+                <input id="remember" checked='true' type="checkbox">Save these choices to make your next visit smoother.
+              </label>
+            </div>
+          </li>
+        </ul>  
+      </form>
     </div>
+  </div>
+  <script>
+      var isMobile = {
+          Android: function() {
+              return navigator.userAgent.match(/Android/i);
+          },
+          BlackBerry: function() {
+              return navigator.userAgent.match(/BlackBerry/i);
+          },
+          iOS: function() {
+              return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+          },
+          Opera: function() {
+              return navigator.userAgent.match(/Opera Mini/i);
+          },
+          Windows: function() {
+              return navigator.userAgent.match(/IEMobile/i);
+          },
+          any: function() {
+              return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows())  ;
+          }
+      };
+  
+       if(isMobile.any()){
+           // Mobile!
+           console.log('isMobile.any()',isMobile.any());
+       } else {
+           // Not mobile
+           console.log('not mobile');
+       }
+  </script>
 </body>
 </html>
