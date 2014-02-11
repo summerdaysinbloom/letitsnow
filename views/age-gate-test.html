@@ -42,9 +42,8 @@
       <label for='rad2'>When were you born ? <span>[{{birthday}}]</span></label>
       <form name="myForm" class='accslide'>
         <br>
-        <p>{{bdaytime}}</p>
-        Birthday (date and time): <input ng-model='bdaytime' type="date" name="bday">
-        <input name="input" class='pure-input-1' ng-model="birthday" type='datetime' placeholder='DD-MM-YYYY' required>
+        <input ng-model='birthday' type="date" name="bday" required />
+        <!-- <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder={{bdaytime}} required /> -->
         <!-- <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
         <tt>birthday = {{birthday}}</tt><br>
         <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br>
@@ -127,9 +126,8 @@
           <input id='bday' type='radio' name='radio'>
           <label for='bday'>When were you born ? <span>{{birthday}}</span></label>
           <div class='accslide'>
-            <p>{{bdaytime}}</p>
-            Birthday (date and time): <input ng-model='bdaytime' type="date" name="bday">
-            <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' value={{bdaytime}}/>
+            <!-- <input ng-model='bdaytime' type="date" name="bday"> -->
+            <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' required />
           </div>
         </li>
         <li>
