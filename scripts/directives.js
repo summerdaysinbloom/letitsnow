@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('ddd');
+
 angular.module('ngDirectives', []).directive('whenScrolled', function() {
     return function(scope, elm, attr) {
     	console.log('scope, elm, attr',scope, elm, attr);
