@@ -5,7 +5,7 @@ var app = angular.module('testApp', [
     'ngRoute',
     'ngControllers',
     'ngAnimate',
-    'infinite-scroll'
+    'ngDirectives'
 ]);
 
 app.run(['$location', '$rootScope', '$timeout', function($location, $rootScope, $timeout) {

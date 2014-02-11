@@ -159,10 +159,15 @@
       </div>
     </div>
     <div ng-show='tabId == 5' id='mom-prize'>
-      <div>
+      <!-- <div>
         <div infinite-scroll='loadMore()' infinite-scroll-distance='2'>
           <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>
         </div>
+      </div> -->
+      <div id="fixed" when-scrolled="loadMore()">
+        <ul>
+          <li style='height: 120px; border-bottom: 1px solid gray;' ng-repeat="i in items">{{i.id}}</li>
+        </ul>  
       </div>
     </div>
   </div>
