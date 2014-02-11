@@ -1,0 +1,90 @@
+<div id='layer-dark'></div>
+<div class='pure-u-1-3 pure-hidden-phone'></div>
+<div class='pure-u-1-3'>
+  <div id='accordion' class='pure-g'> <!-- pure-hidden-desktop pure-hidden-tablet -->
+    <form class="pure-form pure-u-1" data-ng-submit='submit()'>
+      <ul>
+        <li>
+          <input id='rad1' type='radio' name='radio'>
+          <label for='rad1'>Where are you? <span>{{country}} / {{muslim}}</span></label>
+          <div class='accslide'>
+            <div id='dropdown' class='pure-hidden-phone'>
+              <ul class='dropdown'>
+                <li>
+                  <input id='dd1' name='radio' type='radio' ng-model='country' value='Malaysia' required />
+                  <label for='dd1'>Malaysia</label>
+                </li>
+                <li>
+                  <input id='dd2' name='radio' type='radio' ng-model='country' value='Singapore'>
+                  <label for='dd2'>Singapore</label>
+                </li>
+                <li>
+                  <input id='dd3' name='radio' type='radio' ng-model='country' value='Hongkong'>
+                  <label for='dd3'>Hongkong</label>
+                </li>
+              </ul>
+              <div ng-hide="!(country == 'Malaysia')">
+                <input id='muslim-yes' type='checkbox' value='true' ng-model='muslim' checked='checked' />
+                <label for='muslim-yes" class="input-helper input-helper--checkbox'>I am a muslim.</label>
+              </div>
+            </div>
+            <div class='pure-hidden-desktop pure-hidden-tablet'>
+              <select ng-model='country' class='pure-input-1'>
+                <option value=''>Country</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+                <option>Hongkong</option>
+              </select>
+              <div ng-hide='!(country == "Malaysia")'>
+                <input id='muslim-yes' type='checkbox' value='true' ng-model='muslim' checked='checked' />
+                <label for='muslim-yes" class="input-helper input-helper--checkbox'>I am a muslim.</label>
+              </div>
+            </div>
+          </div>
+        </li>
+<!--         <li ng-hide="!(country == 'Malaysia')'>
+          <input id="rad2" type='radio' name='radio'>
+          <label for='rad2'>I am a muslim. {{muslim}}</label>
+          <div class="accslide'>
+            <input id="muslim-yes" type="checkbox" value="true" ng-model="muslim" checked="checked" />
+            <label for='muslim-yes" class="input-helper input-helper--checkbox'>I am a muslim.</label>
+            <input id="muslim-no" type="checkbox" value="No" ng-model="muslim'>
+            <label for='muslim-no" class="input-helper input-helper--checkbox'>No. I am not a muslim.</label>
+            <ul>
+              <li>
+                <input id='muslim-yes' name='radio' type='radio' ng-model="muslim" value="Yes"   required />
+                <label for='muslim-yes'>Yes</label>
+              </li>
+              <li>
+                <input id="muslim-no" name='radio' type='radio' ng-model="muslim" value="No'>
+                <label for='muslim-no'>No</label>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+        <li id='age-gate-bday'>
+          <input id='rad3' type='radio' name='radio'>
+          <label for='rad3'>When were you born ? <span>{{birthday}}</span></label>
+          <div class='accslide'>
+            <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' />
+          </div>
+        </li>
+        <li>
+          <input id='rad4' type='radio' name='radio'>
+          <label for='rad4'>Cookie</label>
+          <div class='accslide'>
+            <input id='remember' type='checkbox' value='cookie' checked>
+            <label for='remember' class='input-helper input-helper--checkbox'> Save these choices to make your next visit smoother.</label>
+          </div>
+        </li>
+        <li>
+          <input id='rad5' type='submit' name='submit' >
+          <label for='rad5' class='pure-button button-page'>Submit</label>
+        </li>
+      </ul>  
+    </form>
+  </div>
+  <a href='#/age-gate-block' class='pure-hidden-phone'>test link redirecting</a>
+  <a href='#/redirecting' class='pure-hidden-phone'>test link blocked</a>
+</div>
+<div class='pure-u-1-3 pure-hidden-phone'></div>

@@ -1,0 +1,147 @@
+<div id='layer-dark'></div>
+<div class='pure-u-1-3 pure-hidden-phone'></div>
+<!-- For mobile -->
+<div class='pure-u-1-3 pure-hidden-tablet pure-hidden-desktop' id='agegate-container'>
+  <ul id='agegate-list'>
+    <li>
+      <input id='rad1' type='radio' name='radio' checked>
+      <label for='rad1'>Where are you? <span>[ {{country}} / {{muslim}} ]</span></label>
+      <form name='form' class="pure-form pure-u-1 accslide">
+          <div id='dropdown' class='pure-hidden-phone'>
+            <ul class='dropdown'>
+              <li>
+                <input id='dd1' name='radio' type='radio' ng-model='country' value='Malaysia' required />
+                <label for='dd1'>Malaysia</label>
+              </li>
+              <li>
+                <input id='dd2' name='radio' type='radio' ng-model='country' value='Singapore'>
+                <label for='dd2'>Singapore</label>
+              </li>
+              <li>
+                <input id='dd3' name='radio' type='radio' ng-model='country' value='Hongkong'>
+                <label for='dd3'>Hongkong</label>
+              </li>
+            </ul>
+          </div>
+          <div class='pure-hidden-desktop pure-hidden-tablet'>
+            <select ng-model='country' class='pure-input-1'>
+              <option value=''>Country</option>
+              <option>Malaysia</option>
+              <option>Singapore</option>
+              <option>Hongkong</option>
+            </select>
+          </div>
+          <div ng-hide="(country !== 'Malaysia')">
+            <input id='muslim-yes' type='checkbox' value='true' ng-model='muslim' checked='checked' ng-click='click()'/>
+            <label for='muslim-yes' class='input-helper input-helper--checkbox'>I am a muslim.</label>
+          </div>
+      </form>      
+    </li>
+    <li ng-hide="!((country == 'Singapore') || (country == 'Hongkong')) ">
+      <input id='rad2' type='radio' name='radio'>
+      <label for='rad2'>When were you born ? <span>[{{birthday}}]</span></label>
+      <form name="myForm" class='accslide'>
+        <br>
+        <input name="input" class='pure-input-1' ng-model="birthday" type='datetime' placeholder='DD-MM-YYYY' required>
+        <!-- <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+        <tt>birthday = {{birthday}}</tt><br>
+        <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br>
+        <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br>
+        <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+        <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br> -->
+      </form>
+    </li>
+    <li ng-show='myForm.$valid'>
+      <input id='rad3' type='radio' name='radio'>
+      <label for='rad3'>Cookie {{cookie}}</label>
+      <form name="myForm3" class='accslide' data-ng-submit='submitMobile()'>
+        
+          <input id='cookie' type='checkbox' ng-model='cookie' value='true' checked='checked'>
+          <label for='cookie' class='input-helper input-helper--checkbox'> Save these choices to make your next visit  smoother.</label>
+        <input ng-disabled="!(cookie)" id='rad5' type='submit' name='submit' class='pure-button button-page' value='submit'>
+      </form>
+    </li>
+  </ul>
+  <a href='#/age-gate-block' class='pure-hidden-phone'>test link redirecting</a><br>
+  <a href='#/redirecting' class='pure-hidden-phone'>test link blocked</a>
+</div>
+<!-- For desktop -->
+<div class='pure-u-1-3 pure-hidden-phone'>
+  <div id='accordion' class='pure-g pure-hidden-phone'>
+    <form name='agegateDesktop' class="pure-form pure-u-1">
+      <ul>
+        <li>
+          <input id='country' type='radio' name='radio'>
+          <label for='country'>Where are you? <span>{{muslim}}</span></label>
+          <div class='accslide'>
+            <div id='dropdown' class='pure-hidden-phone'>
+              <p ng-class="{upsidedown: listdown == true}" ng-click="listdown = !listdown">{{country}} <span class='icon-arrow-down3'></p>
+              <ul class='dropdown' ng-show='listdown'>
+                <li>
+                  <input id='country1' name='radio' type='radio' ng-model='country' value='Malaysia' required />
+                  <label for='country1' ng-click='listdown = false'>Malaysia</label>
+                </li>
+                <li>
+                  <input id='country2' name='radio' type='radio' ng-model='country' value='Singapore'>
+                  <label for='country2' ng-click='listdown = false'>Singapore</label>
+                </li>
+                <li>
+                  <input id='country3' name='radio' type='radio' ng-model='country' value='Hongkong'>
+                  <label for='country3' ng-click='listdown = false'>Hongkong</label>
+                </li>
+                <li>
+                  <input id='country4' name='radio' type='radio' ng-model='country' value='random4'>
+                  <label for='country4' ng-click='listdown = false'>random4</label>
+                </li>
+                <li>
+                  <input id='country5' name='radio' type='radio' ng-model='country' value='random5'>
+                  <label for='country5' ng-click='listdown = false'>random5</label>
+                </li>
+                <li>
+                  <input id='country6' name='radio' type='radio' ng-model='country' value='random6'>
+                  <label for='country6' ng-click='listdown = false'>random6</label>
+                </li>
+                <li>
+                  <input id='country7' name='radio' type='radio' ng-model='country' value='random7'>
+                  <label for='country7' ng-click='listdown = false'>random7</label>
+                </li>
+                <li>
+                  <input id='country8' name='radio' type='radio' ng-model='country' value='random8'>
+                  <label for='country8' ng-click='listdown = false'>random8</label>
+                </li>
+                <li>
+                  <input id='country9' name='radio' type='radio' ng-model='country' value='random9'>
+                  <label for='country9'>random9</label>
+                </li>
+              </ul>
+              <div ng-hide="(country !== 'Malaysia')">
+                <input id='muslim-yes' type='checkbox' value='true' ng-model='muslim' checked='checked' ng-click='click()'/>
+                <label for='muslim-yes' class='input-helper input-helper--checkbox'>I am a muslim.</label>
+            </div>
+            </div>
+          </div>
+        </li>
+        <li id='age-gate-bday'>
+          <input id='bday' type='radio' name='radio'>
+          <label for='bday'>When were you born ? <span>{{birthday}}</span></label>
+          <div class='accslide'>
+            <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' />
+          </div>
+        </li>
+        <li>
+          <input id='remember' type='radio' name='radio'>
+          <div class='accslide'>
+            <input id='cookie' type='checkbox' ng-model='cookie' value='true' checked='checked'>
+            <label for='cookie' class='input-helper input-helper--checkbox'> Save these choices to make your next visit  smoother.</label><em>{{cookie}}</em>
+          </div>
+        </li>
+        <li>
+          <a ng-disabled="!(cookie)" class='pure-button button-page' ng-click='submit()'>Submit</a>
+        </li>
+      </ul>  
+    </form>
+  </div>
+  <a href='#/age-gate-block' class='pure-hidden-phone'>test link redirecting</a>
+  <a href='#/redirecting' class='pure-hidden-phone'>test link blocked</a>
+</div>
+<div class='pure-u-1-3 pure-hidden-phone'></div>

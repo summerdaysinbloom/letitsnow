@@ -5,28 +5,29 @@
 <!--[if gt IE 8]><!--> <html class='no-js'> <!--<![endif]-->
 <head>
   <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>snow browser test</title>
-  <meta name='description' content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
-  <title ng-bind="title">Guinness | MADE OF MORE</title>
+  <title ng-bind="title">[Test]</title>
+  <meta name="keywords" property="og:keywords" content="{{keywords}}">
+  <meta name="description" property="og:description" content="{{description}}">
   <link rel='stylesheet' href='purecss.min.css'>
   <link rel='stylesheet' href='style.css'>
+  <link rel='stylesheet' href='font.css'>
   <!-- endbuild -->
 </head>
-<body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-  <!-- <div class='container'>
-    <div id='letitsnow'>Let it snow</div>
-  </div> -->
-  <div class='pure-g-r'>
+<body data-ng-app='testApp'>
+  <div class='view-animate-container' ng-class='direction'>
+    <div ng-view class='view-animate pure-g-r' ng-cloak></div>
+  </div>
+  <div id='nav-terms' class='pure-u-1 pure-hidden-phone' ng-hide='hideFooter'>
+    <div class='pure-g'>
+      <a class='pure-u-1-3'>Terms & Condition</a>
+      <a class='pure-u-1-3' href='#/'><h1 id='nav-logo'>Guinness</h1></a>
+      <a class='pure-u-1-3'><span class="icon-volume-high"></span></a>
+    </div>
+  </div>
+  <div id='playBtn' ng-hide='hidePlayerBtn' class='pure-u-1 pure-hidden-desktop pure-hidden-tablet'><a href='#/landing'>play video</a></div>
+  <!-- <div class='pure-g-r'>
     <div id='accordion' class='pure-g'>
       <form class="pure-form pure-u-1">
         <ul>
@@ -79,7 +80,7 @@
         </ul>  
       </form>
     </div>
-  </div>
+  </div> -->
   <script>
       var isMobile = {
           Android: function() {
@@ -110,5 +111,21 @@
            console.log('not mobile');
        }
   </script>
+
+  <script src='lib/js/jquery.min.js'></script> <!-- for infinite scroll -->
+  <script src='lib/angular/angular.min.js'></script>
+  <script src='lib/angular/angular-route.min.js'></script>
+  <script src='lib/angular/angular-resource.min.js'></script>
+  <script src='lib/angular/angular-cookies.min.js'></script>
+  <script src='lib/angular/angular-sanitize.min.js'></script>
+  <script src='lib/angular/angular-touch.min.js'></script>
+  <script src='lib/angular/angular-animate.min.js'></script>
+  <!-- app -->
+  <script src='scripts/app.js'></script>
+  <script src='scripts/controller.js'></script>
+  <!-- modernizr html5 video -->
+  <script src='lib/js/modernizr.html5video.js'></script>
+  <!-- infinite scroll angular -->
+  <script src='lib/js/infinite-scroll.js'></script>
 </body>
 </html>
