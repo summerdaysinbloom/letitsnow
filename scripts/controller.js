@@ -122,7 +122,7 @@ app
     
         var counter = 0;
         $scope.loadMore = function() {
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 6; i++) {
                 $scope.items.push({id: counter});
                 counter += 10;
             }
