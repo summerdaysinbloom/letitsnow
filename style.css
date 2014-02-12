@@ -7,14 +7,8 @@ body,html{height:100%;margin:0;overflow:hidden;padding:0;text-transform:uppercas
   box-sizing: border-box;
 }
 
-
 #fixed {
   height: 600px;
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-#fixed ul li {
-  color: #fff;
-  height: 300px;
 }
