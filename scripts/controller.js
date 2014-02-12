@@ -118,16 +118,17 @@ app
 ])
 .controller('TestInfiniteCtrl',['$scope',
     function($scope) {
-        // console.log('[C]TestInfiniteCtrl');
-
-        // $scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
-
-        // $scope.loadMore = function() {
-        //     var last = $scope.images[$scope.images.length - 1];
-        //     for(var i = 1; i <= 8; i++) {
-        //         $scope.images.push(last + i);
-        //     }
-        // };
-
-    }
+        $scope.items = [];
+    
+        var counter = 0;
+        $scope.loadMore = function() {
+            for (var i = 0; i < 5; i++) {
+                $scope.items.push({id: counter});
+                counter += 10;
+            }
+        };
+        
+        $scope.loadMore();
+    
+        }
 ]);
