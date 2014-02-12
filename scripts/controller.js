@@ -64,20 +64,19 @@ app
         $scope.playfilm = function() {
             console.log('playfilm');
         }
-
-        // $scope.items = [];
-    
-        // var counter = 0;
-        // $scope.loadMore = function() {
-        //     for (var i = 0; i < 30; i++) {
-        //         $scope.items.push({id: counter});
-        //         counter += 10;
-        //     }
-        // };
         
-        // console.log('%%%',$scope);
+        $scope.items = [];
+    
+        var counter = 0;
+        $scope.loadMore = function() {
+            for (var i = 0; i < 9; i++) {
+                $scope.items.push({id: counter});
+                counter += 10;
+            }
+        };
+        
+        $scope.loadMore();
 
-        // $scope.loadMore();
 	}
 ])
 .controller('AgeGateBlockCtrl',['$scope',
@@ -115,20 +114,4 @@ app
             }, 1000);
         }
     }
-])
-.controller('TestInfiniteCtrl',['$scope',
-    function($scope) {
-        $scope.items = [];
-    
-        var counter = 0;
-        $scope.loadMore = function() {
-            for (var i = 0; i < 9; i++) {
-                $scope.items.push({id: counter});
-                counter += 10;
-            }
-        };
-        
-        $scope.loadMore();
-    
-        }
 ]);
