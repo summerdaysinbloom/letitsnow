@@ -82,9 +82,7 @@ app.run(function($rootScope, $window) {
     });
 });
 
-app.config(['$routeProvider','$locationProvider', '$httpProvider' ,function($routeProvider, $locationProvider, $httpProvider) {
-    
-delete $httpProvider.defaults.headers.common['X-Requested-With'];
+app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
 
 $locationProvider.html5Mode(true);
 
