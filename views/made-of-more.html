@@ -17,14 +17,14 @@
   </div>
 </div>
 <section class='pure-u-1'>
-	<h2 class='pure-u-1 pure-hidden-desktop pure-hidden-tablet'>What are you made of ?</h2>
-	<ul id='tab-madeofmore' class='pure-g'>
-  	<li class='pure-u-1-3' ng-class="{active: tabId == 1}" ng-click="tabId = 1">Most popular</li>
-  	<li class='pure-u-1-3' ng-class="{active: tabId == 2}" ng-click="tabId = 2">Join</li>
-  	<li class='pure-u-1-3' ng-class="{active: tabId == 5}" ng-click="tabId = 5">Prizes</li>
+  <h2 class='pure-u-1 pure-hidden-desktop pure-hidden-tablet'>What are you made of ?</h2>
+  <ul id='tab-madeofmore' class='pure-g'>
+    <li class='pure-u-1-3' ng-class="{active: tabId == 1}" ng-click="tabId = 1">Most popular</li>
+    <li class='pure-u-1-3' ng-class="{active: tabId == 2}" ng-click="tabId = 2">Join</li>
+    <li class='pure-u-1-3' ng-class="{active: tabId == 5}" ng-click="tabId = 5">Prizes</li>
   </ul>
-	<div id='content-madeofmore' ng-init="tabId=1">
-    <div ng-show='tabId == 1' when-scrolled="loadMore()" id='mom-popular' class='pure-g-r' >
+  <div id='content-madeofmore' ng-init='tabId=1'>
+    <div ng-show='tabId == 1' when-scrolled='loadingPost()' id='mom-popular' class='pure-g-r' >
       <div ng-repeat="i in items" class='pure-u-1-3'>
         <!-- {{i.id}} -->
         <div class='m-box'>
@@ -32,8 +32,8 @@
           <ul class='pure-g'>          
             <li class='pure-u-7-24'><span class='icon-heart'></span>100 likes</li>
             <li class='pure-u-7-24'><span class='icon-forward'></span>100   shares</li>
-            <li class='pure-u-5-24'><button type="submit" class="pure-button   button-share"><span class='icon-heart'></span>Like</button></li>
-            <li class='pure-u-5-24'><button type="submit" class="pure-button   button-share"><span class='icon-heart'></span>Share</button></li>
+            <li class='pure-u-5-24'><button type='submit' class='pure-button button-share'><span class='icon-heart'></span>Like</button></li>
+            <li class='pure-u-5-24'><button type='submit' class='pure-button button-share'><span class='icon-heart'></span>Share</button></li>
           </ul>
         </div>
       </div>
@@ -45,95 +45,70 @@
         </div>
       </div>
       <div class='pure-u-1 alignment-m'>
-        <a class="pure-button button-fb-share" ng-click='tabId = 3'>Share</a>
+        <a class='pure-button button-fb-share' ng-click='tabId = 3'>Share</a>
       </div>
     </div>
     <div ng-show='tabId == 3' id='mom-join'>
       <div class='pure-u-1'>
         <div class='l-box'>
-          <form id='form-join' class="pure-form pure-form-stacked">
+          <form id='form-join' class='pure-form pure-form-stacked'>
             <fieldset>
               <legend>To join the contest, we need a few details.</legend>          
               <div class="pure-g-r">
-                <div class="pure-u-1-2">
+                <div class='pure-u-1-2'>
                   <div class='t-box'>
                     <label for="first-name" class='input-form'>First Name</label>
-                    <input class="pure-input-1" id="first-name" type="text" placeholder='First Name'>
+                    <input class='pure-input-1' id="first-name" type="text" placeholder='First Name'>
                   </div>
                 </div>
-                <div class="pure-u-1-2">
+                <div class='pure-u-1-2'>
                   <div class='t-box'>
-                    <label for="last-name" class='input-form'>Last Name</label>
-                    <input class="pure-input-1" id="last-name" type="text" placeholder='Last Name'>
+                    <label for='last-name' class='input-form'>Last Name</label>
+                    <input class='pure-input-1' id='last-name' type="text" placeholder='Last Name'>
                   </div>
                 </div>
           
-                <div class="pure-u-1-2">
+                <div class='pure-u-1-2'>
                   <div class='t-box'>
-                    <label for="dob" class='input-form'>Date of birth</label>
-                    <input id="dob" class="pure-input-1" ng-model="birthday" type="datetime" placeholder="DD-MM-YYYY" required>
+                    <label for='bday' class='input-form'>Date of birth</label>
+                    <input id='bday' class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' required>
                   </div>
                 </div>
                 <div class="pure-u-1-2 pure-hidden-phone">
                   <div class='t-box'></div>
                 </div>
           
-                <div class="pure-u-1-2">
+                <div class='pure-u-1-2'>
                   <div class='t-box'>
-                    <label for="email" class='input-form'>Email</label>
-                    <input class="pure-input-1" id="email" type="email" placeholder='Email' required>
+                    <label for='email' class='input-form'>Email</label>
+                    <input class='pure-input-1' id='email' type='email' placeholder='Email' required>
                   </div>
                 </div>          
-                <div class="pure-u-1-2">
+                <div class='pure-u-1-2'>
                   <div class='t-box'>
                     <label for="phone" class='input-form'>Phone</label>
-                    <input class="pure-input-1" id="phone" type="text" placeholder='Phone' required>
+                    <input class='pure-input-1' id="phone" type="text" placeholder='Phone' required>
                   </div>
                 </div>
               </div>
-
-<!--               <div class="pure-u-1">
+              <div class='pure-u-1'>
                 <div class='t-box'>
-                  <label for="emailoffers" class="pure-checkbox checkbox input-helper input-helper--checkbox">
-                    <input id="emailoffers" type="checkbox" checked> Email me guinness news and offers
-                  </label>
-                </div>
-              </div>
-
-              <div class="pure-u-1">
-                <div class='t-box'>
-                  <label for="smsoffers" class="pure-checkbox checkbox input-helper input-helper--checkbox">
-                    <input id="smsoffers" type="checkbox"> SMS me guinness news and offers
-                  </label>
-                </div>
-              </div>
-
-              <div class="pure-u-1">
-                <div class='t-box'>
-                  <label for="terms" class="pure-checkbox checkbox input-helper input-helper--checkbox">
-                    <input id="terms" type="checkbox"> I've read the terms and conditions
-                  </label>
-                </div>
-              </div>
- -->
-              <div class="pure-u-1">
-                <div class='t-box'>
-                  <input id="emailoffers" type="checkbox" value="myValue 1" checked>
+                  <input id="emailoffers" type='checkbox' value="myValue 1" checked>
                   <label for="emailoffers" class="input-helper input-helper--checkbox"> Email me guinness news and offers.</label>
                   </div>
               </div>
 
-              <div class="pure-u-1">
+              <div class='pure-u-1'>
                 <div class='t-box'>
-                  <input id="smsoffers" type="checkbox" value="myValue 1" checked>
-                  <label for="smsoffers" class="input-helper input-helper--checkbox"> SMS me guinness news and offers.</label>
+                  <input id='smsoffers' type='checkbox' value="myValue 1" checked>
+                  <label for='smsoffers' class="input-helper input-helper--checkbox"> SMS me guinness news and offers.</label>
                   </div>
               </div>
 
-              <div class="pure-u-1">
+              <div class='pure-u-1'>
                 <div class='t-box'>
-                  <input id="terms" type="checkbox" value="myValue 1" checked>
-                  <label for="terms" class="input-helper input-helper--checkbox"> I've read the terms and conditions.</label>
+                  <input id='terms' type='checkbox' value="myValue 1" checked>
+                  <label for='terms' class="input-helper input-helper--checkbox"> I've read the terms and conditions.</label>
                   </div>
               </div>
           
@@ -159,7 +134,7 @@
           <p>Try again for another chance to win!</p>
         </div>
         <div class='pure-u-1 alignment-m'>
-          <a class="pure-button button-fb-share">Share the video</a>
+          <a class='pure-button button-fb-share'>Share the video</a>
         </div>
       </div>
     </div>
