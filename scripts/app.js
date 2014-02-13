@@ -170,4 +170,4 @@ $routeProvider
 	.otherwise({
     	redirectTo: '/'
     });
-});
+}]);
