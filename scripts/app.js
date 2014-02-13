@@ -82,7 +82,12 @@ app.run(function($rootScope, $window) {
     });
 });
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider','$locationProvider', '$httpProvider' ,function($routeProvider, $locationProvider, $httpProvider) {
+    
+delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+$locationProvider.html5Mode(true);
+
 $routeProvider
 	.when('/', {
         templateUrl: 'views/main.html',
