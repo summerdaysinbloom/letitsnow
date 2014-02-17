@@ -65,17 +65,17 @@ app
             console.log('playfilm');
         }
         
-        $scope.items = [];
-    
+        $scope.items = [];    
         var counter = 0;
-        $scope.loadMore = function() {
+
+        $scope.loadingPost = function() {
             for (var i = 0; i < 9; i++) {
                 $scope.items.push({id: counter});
-                counter += 10;
+                counter += 9;
             }
         };
         
-        $scope.loadMore();
+        $scope.loadingPost();
 
 	}
 ])
