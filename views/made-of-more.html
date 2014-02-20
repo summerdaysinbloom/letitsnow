@@ -3,9 +3,9 @@
   <div class='pure-g'>
     <a class='pure-u-1-3' ng-click="back()"><span class='icon-arrow-left2'></span></a>
     <a class='pure-u-1-3' href='/'><h1 id='nav-logo'>Guinness</h1></a>
-    <a class='pure-u-1-3' ng-click="sound = 2" ng-init='sound=1'>
-      <span ng-show='sound == 1' class='icon-volume-high'></span>
-      <span ng-show='sound == 2' class='icon-volume-mute'></span>
+    <a class='pure-u-1-3' ng-click="sound = !sound" ng-model='sound' ng-init='sound=true'>
+      <span ng-show='sound == true' class='icon-volume-high'></span>
+      <span ng-show='sound == false' class='icon-volume-mute'></span>
     </a>
   </div>
 </div>
