@@ -88,7 +88,7 @@ app
     function($timeout, $location) {
         $timeout(function() {
             $location.path('/landing'); 
-        }, 3000);
+        }, 4000);
     }
 ])
 .controller('BehindTheSceneCtrl', ['$scope',
