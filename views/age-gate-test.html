@@ -5,7 +5,7 @@
   <ul id='agegate-list'>
     <li>
       <input id='rad1' type='radio' name='radio' checked>
-      <label for='rad1'>Where are you? <span>[ {{country}} / {{muslim}} ]</span></label>
+      <label for='rad1'>Where are you? <span></span></label>
       <form name='form' class="pure-form pure-u-1 accslide">
           <div class='pure-hidden-desktop pure-hidden-tablet'>
             <select ng-model='country' class='pure-input-1' >
@@ -21,7 +21,7 @@
     </li>
     <li ng-hide="(country == 'Malaysia') || (country == 'Country') ">
       <input id='rad2' type='radio' name='radio'>
-      <label for='rad2'>When were you born ? <span>[{{birthday}}]</span></label>
+      <label for='rad2'>When were you born ?</label>
       <form name="myForm" class='accslide'>
         <br>
         <input ng-model='birthday' type="date" name="bday" required />
@@ -54,10 +54,10 @@
       <ul>
         <li>
           <input id='country' type='radio' name='radio'>
-          <label for='country'>Where are you? <span>{{muslim}}</span></label>
+          <label for='country'>Where are you?</label>
           <div class='accslide'>
             <div id='dropdown' class='pure-hidden-phone'>
-              <p ng-class="{upsidedown: listdown == true}" ng-click="listdown = !listdown">{{country}} <span class='icon-arrow-down2'></p>
+              <p ng-class="{upsidedown: listdown == true}" ng-click="listdown = !listdown"><span class='icon-arrow-down2'></p>
               <ul class='dropdown' ng-show='listdown'>
                 <!-- <li>
                   <input id='country1' name='radio' type='radio' ng-model='country' value='country' data-age='' required />
@@ -77,7 +77,7 @@
         </li>
         <li id='age-gate-bday'>
           <input id='bday' type='radio' name='radio'>
-          <label for='bday'>When were you born ? <span>{{birthday}}</span></label>
+          <label for='bday'>When were you born ? <span></span></label>
           <div class='accslide'>
             <input class='pure-input-1' ng-model='birthday' type='datetime' placeholder='DD-MM-YYYY' required />
           </div>
